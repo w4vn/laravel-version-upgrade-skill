@@ -1,0 +1,714 @@
+{
+  "edition": "2026-10-26",
+  "retrieved_on": "2026-10-26",
+  "latest_stable_major_observed": "13",
+  "latest_patch_changelog_observed": "v13.38.0",
+  "notes": [
+    "Immutable raw GitHub URLs; branches have no extra version directory after commit.",
+    "Initial release composer manifests establish historical floors, not complete support ranges for later patches.",
+    "5.0/5.1 guessed CHANGELOG-5.x.md paths returned 404; use official tag/release history, not invented snapshots.",
+    "Current advisories, stable patch and package compatibility must be rechecked before actual execution."
+  ],
+  "files": [
+    {
+      "repository": "laravel/framework",
+      "commit": "c42f9abd4a3d2f9a3cd6be109255ddce8092ceb8",
+      "version": "13.x",
+      "ref_description": "v13.38.0 request-key size limit (source, undocumented)",
+      "url": "https://raw.githubusercontent.com/laravel/framework/c42f9abd4a3d2f9a3cd6be109255ddce8092ceb8/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+      "path": "official/13.x/TransformsRequest-v13.38.0.php",
+      "sha256": "297b0f9b1140866b17a7e7f105db33db2c0f825cd39e5c7db11499d1dbd87a50",
+      "bytes": 2781
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "61c01c74d61b10ee0ac9dcdb3508f362ac8297ad",
+      "version": "10.x",
+      "ref_description": "changelog",
+      "url": "https://raw.githubusercontent.com/laravel/framework/61c01c74d61b10ee0ac9dcdb3508f362ac8297ad/CHANGELOG.md",
+      "path": "official/10.x/framework-changelog.md",
+      "sha256": "63bd668af9fc0d0ec1e9e5fbb197caf38b843574f95e0e48f1b7dfd10379985f",
+      "bytes": 149865
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "be2ddb5c31b0b9ebc2738d9f37a9d4c960aa3199",
+      "version": "10.x",
+      "ref_description": "v10.0.0",
+      "url": "https://raw.githubusercontent.com/laravel/framework/be2ddb5c31b0b9ebc2738d9f37a9d4c960aa3199/composer.json",
+      "path": "official/10.x/framework-composer.json",
+      "sha256": "b0e5fa6bfd482fc18574d7ca27c96271eacaadb88bc13eb23767d76667084dce",
+      "bytes": 8507
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "37e19ec52ec0894e9380fb57f3c5d0dd1f85872a",
+      "version": "10.x",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/37e19ec52ec0894e9380fb57f3c5d0dd1f85872a/releases.md",
+      "path": "official/10.x/releases.md",
+      "sha256": "4b41c8b8f8ecc487a2b0be9bc513a8dbe67380e6ec28b816c3fe67ac6cce3c65",
+      "bytes": 8383
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "37e19ec52ec0894e9380fb57f3c5d0dd1f85872a",
+      "version": "10.x",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/37e19ec52ec0894e9380fb57f3c5d0dd1f85872a/upgrade.md",
+      "path": "official/10.x/upgrade.md",
+      "sha256": "f6244b2566ffabac57df87ba9ed2ed7c654277cb1b12d6abf719a774810d0b04",
+      "bytes": 12368
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "37382fb951f6176c93e21c218ba9581a8cb9cb08",
+      "version": "11.x",
+      "ref_description": "changelog",
+      "url": "https://raw.githubusercontent.com/laravel/framework/37382fb951f6176c93e21c218ba9581a8cb9cb08/CHANGELOG.md",
+      "path": "official/11.x/framework-changelog.md",
+      "sha256": "22fcb4112171f9635b4964ee72ad5bf3b39bc05de4e8c6768ad532b1ea00d2de",
+      "bytes": 201397
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "6089f679d6d29e6071a6448ed5e96de02e57fedb",
+      "version": "11.x",
+      "ref_description": "v11.0.0",
+      "url": "https://raw.githubusercontent.com/laravel/framework/6089f679d6d29e6071a6448ed5e96de02e57fedb/composer.json",
+      "path": "official/11.x/framework-composer.json",
+      "sha256": "2409829ad5f8ca21b89e805571a0996c7b9258d4d9498fa3d6c065482aad879f",
+      "bytes": 8667
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "be9d43b96acd98dc32872b7498d158430c251f1c",
+      "version": "11.x",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/be9d43b96acd98dc32872b7498d158430c251f1c/releases.md",
+      "path": "official/11.x/releases.md",
+      "sha256": "709ae8a1dd81fc82baa42c32d6cf75ad15e43bde76bd7491ea3e83f81e843e47",
+      "bytes": 18244
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "be9d43b96acd98dc32872b7498d158430c251f1c",
+      "version": "11.x",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/be9d43b96acd98dc32872b7498d158430c251f1c/upgrade.md",
+      "path": "official/11.x/upgrade.md",
+      "sha256": "668725d134e2d3a62dea9a5fe75da8a9dad016c341991b948559c082fb2457a3",
+      "bytes": 27486
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "3f732656b1b97de366bce8ed147077ed11e25248",
+      "version": "12.x",
+      "ref_description": "changelog",
+      "url": "https://raw.githubusercontent.com/laravel/framework/3f732656b1b97de366bce8ed147077ed11e25248/CHANGELOG.md",
+      "path": "official/12.x/framework-changelog.md",
+      "sha256": "7690d395c00c04a646cf73a1f875c326369f024d6d9617a01f03a44fbebc79d2",
+      "bytes": 265060
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "bd8aeb64d3f9fa4b11690d702bdf289f5f32ae97",
+      "version": "12.x",
+      "ref_description": "v12.0.0",
+      "url": "https://raw.githubusercontent.com/laravel/framework/bd8aeb64d3f9fa4b11690d702bdf289f5f32ae97/composer.json",
+      "path": "official/12.x/framework-composer.json",
+      "sha256": "ed60a565e7554daf475936cc8447c6aa4c827853116f57baf82de41c48204a6d",
+      "bytes": 9238
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "5b8c610735c8af96a3bda4e37a820b27dc40aee9",
+      "version": "12.x",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/5b8c610735c8af96a3bda4e37a820b27dc40aee9/releases.md",
+      "path": "official/12.x/releases.md",
+      "sha256": "f51528d6d1a2f39c7ee893eccb21552bc346b07f26c787b960ae4251ceff4d5f",
+      "bytes": 4562
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "5b8c610735c8af96a3bda4e37a820b27dc40aee9",
+      "version": "12.x",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/5b8c610735c8af96a3bda4e37a820b27dc40aee9/upgrade.md",
+      "path": "official/12.x/upgrade.md",
+      "sha256": "7fab2e53ddab5958770ed25d404934077c9d31752e9f35297561143565fe6a44",
+      "bytes": 11263
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "5d7797528723107cd4f495326838a7d7d67fbb20",
+      "version": "13.x",
+      "ref_description": "changelog",
+      "url": "https://raw.githubusercontent.com/laravel/framework/5d7797528723107cd4f495326838a7d7d67fbb20/CHANGELOG.md",
+      "path": "official/13.x/framework-changelog.md",
+      "sha256": "a17d0e1ae7972f65f3ad5fb39046fa1120883d0a5c069d6192cc0f5b0156daa0",
+      "bytes": 219615
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "3e33f431a05365d008742ff8001b92641086d5f8",
+      "version": "13.x",
+      "ref_description": "v13.0.0",
+      "url": "https://raw.githubusercontent.com/laravel/framework/3e33f431a05365d008742ff8001b92641086d5f8/composer.json",
+      "path": "official/13.x/framework-composer.json",
+      "sha256": "0fff0f1ae42a97e103dbebaee19eb4f5b1f3fa443676bf3e6c536dae50ea11ec",
+      "bytes": 10038
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "c42f9abd4a3d2f9a3cd6be109255ddce8092ceb8",
+      "version": "13.x",
+      "ref_description": "v13.38.0",
+      "url": "https://raw.githubusercontent.com/laravel/framework/c42f9abd4a3d2f9a3cd6be109255ddce8092ceb8/composer.json",
+      "path": "official/13.x/framework-current-composer.json",
+      "sha256": "bb3b4d6c00f90fa5b9b26b503dff9128e0259776fa01593c5eb06a6f26d2e344",
+      "bytes": 10768
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "b0d9ce8a6ab417d7ebef2423fb4682b7d9d8dfe1",
+      "version": "13.x",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/b0d9ce8a6ab417d7ebef2423fb4682b7d9d8dfe1/releases.md",
+      "path": "official/13.x/releases.md",
+      "sha256": "0297b3f994b9a46d54ae4401e61367aa7535d7cbe4709a3a3d5d8b0051d48a1c",
+      "bytes": 8532
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "b0d9ce8a6ab417d7ebef2423fb4682b7d9d8dfe1",
+      "version": "13.x",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/b0d9ce8a6ab417d7ebef2423fb4682b7d9d8dfe1/upgrade.md",
+      "path": "official/13.x/upgrade.md",
+      "sha256": "afa60da19dd2dae4d77dfdb5eaecd3d10bfde6b41fa5647cdcbd4074071d472c",
+      "bytes": 19045
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "44c61252b5762ff53ad181ed416e3006c50a6a9b",
+      "version": "5.0",
+      "ref_description": "v5.0.0",
+      "url": "https://raw.githubusercontent.com/laravel/framework/44c61252b5762ff53ad181ed416e3006c50a6a9b/composer.json",
+      "path": "official/5.0/framework-composer.json",
+      "sha256": "5b0435dc40864e694db1d60a1699c42dc8ad2d5b7c03fdde7de70b29cb29dac5",
+      "bytes": 3964
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "1b865bd17467f4c657cd58bef7c122a9be2f894a",
+      "version": "5.0",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/1b865bd17467f4c657cd58bef7c122a9be2f894a/releases.md",
+      "path": "official/5.0/releases.md",
+      "sha256": "42b726e4056de1df86d845dcb9e5cf8242b2da92ac2a868e39a571087696a6f7",
+      "bytes": 20501
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "1b865bd17467f4c657cd58bef7c122a9be2f894a",
+      "version": "5.0",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/1b865bd17467f4c657cd58bef7c122a9be2f894a/upgrade.md",
+      "path": "official/5.0/upgrade.md",
+      "sha256": "e80326fbfe34274c66ba978588242ae79ff7cff1288bb06e865d462eac17766f",
+      "bytes": 19995
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "a423a55ed6601daebcbb75817de6d06b4d670a70",
+      "version": "5.1",
+      "ref_description": "v5.1.0",
+      "url": "https://raw.githubusercontent.com/laravel/framework/a423a55ed6601daebcbb75817de6d06b4d670a70/composer.json",
+      "path": "official/5.1/framework-composer.json",
+      "sha256": "7e40df65024aa2990c10f2daaaa53a986ec72fd01f4f97153d1f311c697c1988",
+      "bytes": 4369
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "c5df8b2d108fd660694bab6ff981de233ba66003",
+      "version": "5.1",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/c5df8b2d108fd660694bab6ff981de233ba66003/releases.md",
+      "path": "official/5.1/releases.md",
+      "sha256": "fba97accedce8dcc774a825e50b56b42bebfce5dd9dd5255d6271191dae78b2f",
+      "bytes": 27512
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "c5df8b2d108fd660694bab6ff981de233ba66003",
+      "version": "5.1",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/c5df8b2d108fd660694bab6ff981de233ba66003/upgrade.md",
+      "path": "official/5.1/upgrade.md",
+      "sha256": "363264a705ff70dbaa5a2117219a0271fcc2b03f75654e83486fec24a0e58ec7",
+      "bytes": 31573
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "c69fc5d604ec749e5d42011c4b3d9c543d1c57ab",
+      "version": "5.2",
+      "ref_description": "changelog",
+      "url": "https://raw.githubusercontent.com/laravel/framework/c69fc5d604ec749e5d42011c4b3d9c543d1c57ab/CHANGELOG-5.2.md",
+      "path": "official/5.2/framework-changelog.md",
+      "sha256": "736b8d2ffba2f3c306ab4489ddfd3b6ff70e7aa2fb1b3a3b225bdd0c8687e666",
+      "bytes": 36008
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "7f62d81acb2001faafb21a32544464ebfc92476c",
+      "version": "5.2",
+      "ref_description": "v5.2.0",
+      "url": "https://raw.githubusercontent.com/laravel/framework/7f62d81acb2001faafb21a32544464ebfc92476c/composer.json",
+      "path": "official/5.2/framework-composer.json",
+      "sha256": "8d0f741ad02d4f1aef0194101c3f7a39d9383de04d3ab51c0830b4951b6947b3",
+      "bytes": 4611
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "3d47f750618516fd4332f2b040d8af41cd8f0a9c",
+      "version": "5.2",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/3d47f750618516fd4332f2b040d8af41cd8f0a9c/releases.md",
+      "path": "official/5.2/releases.md",
+      "sha256": "54d45e3b38b2a86041c45467893e3d77d155e6e56ff67f76a6c632e398c57155",
+      "bytes": 33291
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "3d47f750618516fd4332f2b040d8af41cd8f0a9c",
+      "version": "5.2",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/3d47f750618516fd4332f2b040d8af41cd8f0a9c/upgrade.md",
+      "path": "official/5.2/upgrade.md",
+      "sha256": "97c3005e6712788677122d4b7587c72cdd7a9185d6b1407ed423ecd6b36a5352",
+      "bytes": 46970
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "2906b572aa83ff46b8ad57093dd0e859c0ff783f",
+      "version": "5.3",
+      "ref_description": "changelog",
+      "url": "https://raw.githubusercontent.com/laravel/framework/2906b572aa83ff46b8ad57093dd0e859c0ff783f/CHANGELOG-5.3.md",
+      "path": "official/5.3/framework-changelog.md",
+      "sha256": "d6f72435f756c91c07c27f46fdd5ff4f89fcc49a86dcaece33805306684cff6c",
+      "bytes": 45623
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "7d116dc5a008e69c97f864af79ac46ab6a8d5895",
+      "version": "5.3",
+      "ref_description": "v5.3.0",
+      "url": "https://raw.githubusercontent.com/laravel/framework/7d116dc5a008e69c97f864af79ac46ab6a8d5895/composer.json",
+      "path": "official/5.3/framework-composer.json",
+      "sha256": "b3ce36a3fb84e51c156c3c8ec8a9e37ce75aebfe3d98a75f6dcf825872819bcc",
+      "bytes": 4529
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "7af4d0a5a125c0262d41dfb9dacace71ccf34cc9",
+      "version": "5.3",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/7af4d0a5a125c0262d41dfb9dacace71ccf34cc9/releases.md",
+      "path": "official/5.3/releases.md",
+      "sha256": "9015710ac13e1bf857837b4eeeaaa9b810d57aea7a206e324c74c3b256ca2714",
+      "bytes": 45441
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "7af4d0a5a125c0262d41dfb9dacace71ccf34cc9",
+      "version": "5.3",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/7af4d0a5a125c0262d41dfb9dacace71ccf34cc9/upgrade.md",
+      "path": "official/5.3/upgrade.md",
+      "sha256": "749f6540441a76d7cf53fcb11706282b3e7daf6a8c3921e411ab4bbf79ba39a3",
+      "bytes": 73723
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "5042846eb0bdd0ade2e760015b1e5c57013225d5",
+      "version": "5.4",
+      "ref_description": "changelog",
+      "url": "https://raw.githubusercontent.com/laravel/framework/5042846eb0bdd0ade2e760015b1e5c57013225d5/CHANGELOG-5.4.md",
+      "path": "official/5.4/framework-changelog.md",
+      "sha256": "87fd449c9c75a5700e685d53afe9ed9a2a2a6ef9e09c65b4360c073ef95e139c",
+      "bytes": 85095
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "7212b1e9620c36bf806e444f6931cf5f379c68ff",
+      "version": "5.4",
+      "ref_description": "v5.4.0",
+      "url": "https://raw.githubusercontent.com/laravel/framework/7212b1e9620c36bf806e444f6931cf5f379c68ff/composer.json",
+      "path": "official/5.4/framework-composer.json",
+      "sha256": "52534d93216d4745ecea3f834dc1255576bd1fadc7525b7bb7c1a8cbab662af4",
+      "bytes": 4956
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "fc95dc890bc4085979406a11aee71227205ca0fb",
+      "version": "5.4",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/fc95dc890bc4085979406a11aee71227205ca0fb/releases.md",
+      "path": "official/5.4/releases.md",
+      "sha256": "b56567ada61fd588df955e9ce23701f515d486dc602acfec1867c211ba0d6dad",
+      "bytes": 62153
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "fc95dc890bc4085979406a11aee71227205ca0fb",
+      "version": "5.4",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/fc95dc890bc4085979406a11aee71227205ca0fb/upgrade.md",
+      "path": "official/5.4/upgrade.md",
+      "sha256": "48c4a5f0dcb859e9c4b45c1b5f1d09b475c9d464a8b09a28565bea996cb33ae5",
+      "bytes": 24741
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "c62385a23c639742b3b74a4a78640da25e6b782b",
+      "version": "5.5",
+      "ref_description": "changelog",
+      "url": "https://raw.githubusercontent.com/laravel/framework/c62385a23c639742b3b74a4a78640da25e6b782b/CHANGELOG-5.5.md",
+      "path": "official/5.5/framework-changelog.md",
+      "sha256": "de6e0f91f4f417350296c79033dd00c79961b0310c09da6f2cef1558fd6c7d2c",
+      "bytes": 87564
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "bd352a0d2ca93775fce8ef02365b03fc4fb8cbb0",
+      "version": "5.5",
+      "ref_description": "v5.5.0",
+      "url": "https://raw.githubusercontent.com/laravel/framework/bd352a0d2ca93775fce8ef02365b03fc4fb8cbb0/composer.json",
+      "path": "official/5.5/framework-composer.json",
+      "sha256": "4faa914c488804a9a9d73691472b918db3eeb45161cb9b7dcc497a30a9a94bfb",
+      "bytes": 5055
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "2bc51a168bc5ced2a50d036808f7cf5ca788076d",
+      "version": "5.5",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/2bc51a168bc5ced2a50d036808f7cf5ca788076d/releases.md",
+      "path": "official/5.5/releases.md",
+      "sha256": "c98b360118e04b13c1cc2b1de7455900509cc648b02bf4ce32ade86b2a9d58a3",
+      "bytes": 22883
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "2bc51a168bc5ced2a50d036808f7cf5ca788076d",
+      "version": "5.5",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/2bc51a168bc5ced2a50d036808f7cf5ca788076d/upgrade.md",
+      "path": "official/5.5/upgrade.md",
+      "sha256": "9f85ba18d2b046c294dcea0b531e2eaab5eeffc25b19aa66538865eb6a6a3e80",
+      "bytes": 17616
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "5ceadf91f13be89a3338c3d4166a4676272a23bf",
+      "version": "5.6",
+      "ref_description": "changelog",
+      "url": "https://raw.githubusercontent.com/laravel/framework/5ceadf91f13be89a3338c3d4166a4676272a23bf/CHANGELOG-5.6.md",
+      "path": "official/5.6/framework-changelog.md",
+      "sha256": "8b814bf07e9df027db4e0ec99073f64a3bf2ce43b8675211a91a4d7e7b4ff6e9",
+      "bytes": 48497
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "56a58e0fa3d845bb992d7c64ac9bb6d0c24b745a",
+      "version": "5.6",
+      "ref_description": "v5.6.0",
+      "url": "https://raw.githubusercontent.com/laravel/framework/56a58e0fa3d845bb992d7c64ac9bb6d0c24b745a/composer.json",
+      "path": "official/5.6/framework-composer.json",
+      "sha256": "8d1963fb0486609a10cac1ad5f7cfa5d28f1542910869d8db1324abc1211e4f3",
+      "bytes": 5281
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "90dd20d27875c2cc1ef62c16e2bfeb91c4daa49d",
+      "version": "5.6",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/90dd20d27875c2cc1ef62c16e2bfeb91c4daa49d/releases.md",
+      "path": "official/5.6/releases.md",
+      "sha256": "99507e17c2d6112b0651bc9c0eb9caac1a796dc37c011562fba3f7c2e5d59eca",
+      "bytes": 10362
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "90dd20d27875c2cc1ef62c16e2bfeb91c4daa49d",
+      "version": "5.6",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/90dd20d27875c2cc1ef62c16e2bfeb91c4daa49d/upgrade.md",
+      "path": "official/5.6/upgrade.md",
+      "sha256": "b50a48d1c1a6ff68ed7939aa8144b5df569adeed9be1b3112e65237eb6bb4d1b",
+      "bytes": 13536
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "2555bf6ef6e6739e5f49f4a5d40f6264c57abd56",
+      "version": "5.7",
+      "ref_description": "changelog",
+      "url": "https://raw.githubusercontent.com/laravel/framework/2555bf6ef6e6739e5f49f4a5d40f6264c57abd56/CHANGELOG-5.7.md",
+      "path": "official/5.7/framework-changelog.md",
+      "sha256": "d7ec2d0f4b1f9fe072313063cbcb79d356d640e513695ec7bba9bd9f6853c2bd",
+      "bytes": 41823
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "9f313ce9bb5ad49a06ae78d33fbdd1c92a0e21f6",
+      "version": "5.7",
+      "ref_description": "v5.7.0",
+      "url": "https://raw.githubusercontent.com/laravel/framework/9f313ce9bb5ad49a06ae78d33fbdd1c92a0e21f6/composer.json",
+      "path": "official/5.7/framework-composer.json",
+      "sha256": "7c141b1b0ccd24bf315791844c930e4e317cd41e69320c741e561c6e01165870",
+      "bytes": 5476
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "3315ebcaede0cf60bf3dae2c5f173d490b87fe3c",
+      "version": "5.7",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/3315ebcaede0cf60bf3dae2c5f173d490b87fe3c/releases.md",
+      "path": "official/5.7/releases.md",
+      "sha256": "41f7834c33f478e1fc8a3ffdee0b9b8d7aca1d77dd43e18055dbaef3067cea69",
+      "bytes": 8064
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "3315ebcaede0cf60bf3dae2c5f173d490b87fe3c",
+      "version": "5.7",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/3315ebcaede0cf60bf3dae2c5f173d490b87fe3c/upgrade.md",
+      "path": "official/5.7/upgrade.md",
+      "sha256": "6823ba716bd35a5dc71e8b0911543439540ed1197cc01af24f1278e64e82061f",
+      "bytes": 20833
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "78eb4dabcc03e189620c16f436358d41d31ae11f",
+      "version": "5.8",
+      "ref_description": "changelog",
+      "url": "https://raw.githubusercontent.com/laravel/framework/78eb4dabcc03e189620c16f436358d41d31ae11f/CHANGELOG-5.8.md",
+      "path": "official/5.8/framework-changelog.md",
+      "sha256": "e85d4a4ccec0459c797ee6b3c3980aa2d77589e09e01aadae0b42b612878461b",
+      "bytes": 41724
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "e6c8aa0e39d8f91068ad1c299546536e9f25ef63",
+      "version": "5.8",
+      "ref_description": "v5.8.0",
+      "url": "https://raw.githubusercontent.com/laravel/framework/e6c8aa0e39d8f91068ad1c299546536e9f25ef63/composer.json",
+      "path": "official/5.8/framework-composer.json",
+      "sha256": "85134f617c6ea783faee9a91726e7d2aa474fccb40e15d048b24a02e38d65c73",
+      "bytes": 5871
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "07e9553fadb809b1ca8fa01fce5ea534edeb0409",
+      "version": "5.8",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/07e9553fadb809b1ca8fa01fce5ea534edeb0409/releases.md",
+      "path": "official/5.8/releases.md",
+      "sha256": "063653bc642f23a7dc008600d0cbb021c234f602b54635a907603cecded692db",
+      "bytes": 12547
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "07e9553fadb809b1ca8fa01fce5ea534edeb0409",
+      "version": "5.8",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/07e9553fadb809b1ca8fa01fce5ea534edeb0409/upgrade.md",
+      "path": "official/5.8/upgrade.md",
+      "sha256": "bdfb3f5d1ebe37a5d1f343d65dec44052edfa7ce57969acbd0aa55820a546988",
+      "bytes": 29738
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "841d842bbdc8e08c6364a8c06212c7286bbf0b9a",
+      "version": "6.x",
+      "ref_description": "changelog",
+      "url": "https://raw.githubusercontent.com/laravel/framework/841d842bbdc8e08c6364a8c06212c7286bbf0b9a/CHANGELOG-6.x.md",
+      "path": "official/6.x/framework-changelog.md",
+      "sha256": "011465be6784f7aa767bdfa1b35ccc03c6899d7e01b5cd856d53f558dae666b5",
+      "bytes": 79539
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "89c81d4dc37714d82521d05dc003b26b2a86defc",
+      "version": "6.x",
+      "ref_description": "v6.0.0",
+      "url": "https://raw.githubusercontent.com/laravel/framework/89c81d4dc37714d82521d05dc003b26b2a86defc/composer.json",
+      "path": "official/6.x/framework-composer.json",
+      "sha256": "37fe55c25ff4f1e6891111836bff5efc88c2c226b875bb304ca2da8003cb7f3a",
+      "bytes": 5680
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "c9b5dfbe7a8cd83e2aad28ef7c3c7a1282fb05f5",
+      "version": "6.x",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/c9b5dfbe7a8cd83e2aad28ef7c3c7a1282fb05f5/releases.md",
+      "path": "official/6.x/releases.md",
+      "sha256": "e3fc28a8733e24bf480f9ac4f7a873e8ba0491f3be375e156b537d93480b5f93",
+      "bytes": 10857
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "c9b5dfbe7a8cd83e2aad28ef7c3c7a1282fb05f5",
+      "version": "6.x",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/c9b5dfbe7a8cd83e2aad28ef7c3c7a1282fb05f5/upgrade.md",
+      "path": "official/6.x/upgrade.md",
+      "sha256": "39ac4bf78ad514ba417afa5de41a6b0123b0dce237c5d99866f1c6e0e6a28756",
+      "bytes": 17874
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "0fe75bafb8703c6c8184792b91ce5e27ad80aa7b",
+      "version": "7.x",
+      "ref_description": "changelog",
+      "url": "https://raw.githubusercontent.com/laravel/framework/0fe75bafb8703c6c8184792b91ce5e27ad80aa7b/CHANGELOG-7.x.md",
+      "path": "official/7.x/framework-changelog.md",
+      "sha256": "c3e24483c59171cc2b5afc1f208f3707aa74e110219d4fd9ada68c0758e5c240",
+      "bytes": 74550
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "0b12ef19623c40e22eff91a4b48cb13b3b415b25",
+      "version": "7.x",
+      "ref_description": "v7.0.0",
+      "url": "https://raw.githubusercontent.com/laravel/framework/0b12ef19623c40e22eff91a4b48cb13b3b415b25/composer.json",
+      "path": "official/7.x/framework-composer.json",
+      "sha256": "fb9c5314a368fd524453fbc378a8d9e1fb01ede5705d25c88d59cb0570cf2baf",
+      "bytes": 6093
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "313be1aa38f21a44f6d754ad595d565733168963",
+      "version": "7.x",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/313be1aa38f21a44f6d754ad595d565733168963/releases.md",
+      "path": "official/7.x/releases.md",
+      "sha256": "8ef4efbc96001461d21f6c23e60f06c2cf44f4e3ff24e2dad248bb85a108869c",
+      "bytes": 19089
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "313be1aa38f21a44f6d754ad595d565733168963",
+      "version": "7.x",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/313be1aa38f21a44f6d754ad595d565733168963/upgrade.md",
+      "path": "official/7.x/upgrade.md",
+      "sha256": "4670d3ed97abea450e8a2be54cb7a8bd25287a279dcf5977910c646e282479b5",
+      "bytes": 14504
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "863d9289a5150e19ee8f6a09631a6ce441f701bc",
+      "version": "8.x",
+      "ref_description": "changelog",
+      "url": "https://raw.githubusercontent.com/laravel/framework/863d9289a5150e19ee8f6a09631a6ce441f701bc/CHANGELOG-8.x.md",
+      "path": "official/8.x/framework-changelog.md",
+      "sha256": "69f2bf632518517d34337d7b2b4ab0b510ed23778006c8b807b4749d5f2762ef",
+      "bytes": 167669
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "43bea00fd27c76c01fd009e46725a54885f4d2a5",
+      "version": "8.x",
+      "ref_description": "v8.0.0",
+      "url": "https://raw.githubusercontent.com/laravel/framework/43bea00fd27c76c01fd009e46725a54885f4d2a5/composer.json",
+      "path": "official/8.x/framework-composer.json",
+      "sha256": "e284c075e10e47ea35b1393c737f333d924cbb56c182d9c767a96fdf84539594",
+      "bytes": 6638
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "13bfbca86689ae71739debd56e83ed6efc840ab2",
+      "version": "8.x",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/13bfbca86689ae71739debd56e83ed6efc840ab2/releases.md",
+      "path": "official/8.x/releases.md",
+      "sha256": "41e7d72a9c83209a013bd8ea388113985666695a38a546c109e2f6f7f22ca4e5",
+      "bytes": 20120
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "13bfbca86689ae71739debd56e83ed6efc840ab2",
+      "version": "8.x",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/13bfbca86689ae71739debd56e83ed6efc840ab2/upgrade.md",
+      "path": "official/8.x/upgrade.md",
+      "sha256": "ad171b4c20686f0d4dfa48e8a4d68f09e29e8c516e72a286fd69139f33b44748",
+      "bytes": 17617
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "a9f70abea4805d7fa567855189f7e640807c49ea",
+      "version": "9.x",
+      "ref_description": "changelog",
+      "url": "https://raw.githubusercontent.com/laravel/framework/a9f70abea4805d7fa567855189f7e640807c49ea/CHANGELOG.md",
+      "path": "official/9.x/framework-changelog.md",
+      "sha256": "1830386b2b4d91fc33a795d7ed1ef32b2d37fc17c3697d264151d89124f2f017",
+      "bytes": 121223
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "fbe7ed828819eadabb3cb9f95847a2ffe8846fd6",
+      "version": "9.x",
+      "ref_description": "v9.0.0",
+      "url": "https://raw.githubusercontent.com/laravel/framework/fbe7ed828819eadabb3cb9f95847a2ffe8846fd6/composer.json",
+      "path": "official/9.x/framework-composer.json",
+      "sha256": "a47e3ee672a8b8eb8a1779ea838e54efd943151177c2da9fdf23f7cd900b7f1d",
+      "bytes": 7571
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "177c095cc802ea0a1fa5f765e870c2cccaae9aa2",
+      "version": "9.x",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/177c095cc802ea0a1fa5f765e870c2cccaae9aa2/releases.md",
+      "path": "official/9.x/releases.md",
+      "sha256": "4ac4fc1ce4417f6959080a86dd0142370d61ff43293e02e457b7f83aed20c21f",
+      "bytes": 21732
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "177c095cc802ea0a1fa5f765e870c2cccaae9aa2",
+      "version": "9.x",
+      "ref_description": "docs",
+      "url": "https://raw.githubusercontent.com/laravel/docs/177c095cc802ea0a1fa5f765e870c2cccaae9aa2/upgrade.md",
+      "path": "official/9.x/upgrade.md",
+      "sha256": "a5001a17297d004aec35ef66262e4b527182079352674750fe9efa174255b82d",
+      "bytes": 31432
+    },
+    {
+      "repository": "laravel/docs",
+      "commit": "b0d9ce8a6ab417d7ebef2423fb4682b7d9d8dfe1",
+      "version": "13.x",
+      "ref_description": "license",
+      "url": "https://raw.githubusercontent.com/laravel/docs/b0d9ce8a6ab417d7ebef2423fb4682b7d9d8dfe1/license.md",
+      "path": "official/laravel-docs-license.md",
+      "sha256": "984ec2ba4df86e5503616fb465b5d0eaeaf5311150c724d3ef0d1433edc8bbf7",
+      "bytes": 1074
+    },
+    {
+      "repository": "laravel/framework",
+      "commit": "3e33f431a05365d008742ff8001b92641086d5f8",
+      "version": "13.x",
+      "ref_description": "license",
+      "url": "https://raw.githubusercontent.com/laravel/framework/3e33f431a05365d008742ff8001b92641086d5f8/LICENSE.md",
+      "path": "official/laravel-framework-license.md",
+      "sha256": "7b4f9149597fbae2ce689bc9317d1869e17f1b3fa5f01c289998c108f8c37cf7",
+      "bytes": 1075
+    }
+  ]
+}

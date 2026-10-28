@@ -1,0 +1,90 @@
+# Behavior-preserving verification
+
+These are gate definitions, not claims of tests already run. Assign gates from actual application behavior, the audit's critical-feature list, risk/owner decisions and official-guide applicability. A missing tool, fixture or runtime is **BLOCKED**, not N/A. N/A requires evidence that the feature is absent or outside an explicitly agreed scope. A specifically named, pre-approved Level 1 or Level 2 exception may permit continuation as **PARTIAL**; a missing Level 0 gate never permits automatic advancement. No owner waiver can accept a security regression.
+
+## Safe harness and evidence identity
+
+- B = immutable original reference; P = previous completed hop; C = current candidate. Normally B=P on the first hop. If B cannot install due to manifest/lock drift, stop until reconciliation is separately approved; keep B unchanged and identify **B-reconciled** with before/after content hashes and the exact manifest diff. It may be the named executable control/P, but label comparisons C↔B-reconciled and the unavailable direct C↔B evidence explicitly. Never substitute it silently or claim production parity. Keep matching source, composer.json, lock, vendor and runtime in every tree; never swap locks into candidate code.
+- Use disposable synthetic fixtures, a fixed clock, timezone/locale, identical fonts, DB settings and fixture identifiers. Each concurrent tree has its own DB/cache/session/queue namespace. Reset state between runs. Transactions are insufficient for DDL, out-of-process HTTP, after-commit events and workers; use disposable services for those cases.
+- Inspect test bootstrap, providers, accessors, GET routes and callbacks before execution. Disable outbound delivery at an enforceable process/container/network boundary, with a canary proving the block; use local adapters and a mail catcher. A fake facade alone may not intercept raw curl, Guzzle, subprocesses or PDF remote assets. Never connect a fixture harness to production DBs, buckets, queues or webhooks.
+- Ensure config is not cached from another environment before PHPUnit. `APP_ENV=testing` does not override an already-cached live DB configuration. Inspect cache artifacts without printing secrets; clear/rebuild only within approved isolated trees.
+- Record commit/snapshot, lock SHA256, relevant config hashes, PHP + extensions, Composer/test-tool versions, fixture revision, clock/timezone, commands/exit codes, capture/renderer settings and artifact paths. Hashes without successful exercise and coverage are insufficient; hashes do not authenticate an approval.
+- At hop closure, run the applicable checks on B/P/C and compare C↔P (new regression) and C↔B (accumulated drift). Evidence can be reused within that closing round only if all relevant inputs are unchanged. Any later change invalidates affected evidence. If rerunning B materially slows the entire range, propose a separate per-gate reuse design requiring unchanged B commit/lock, image digest, test/fixture/harness/normalization hashes, environment/config, clock/timezone, schema/DB state, scope and intact artifact hashes; do not implement or assume cross-hop reuse now.
+
+## Verification levels
+
+| Level | Required scope | Closure rule |
+|---|---|---|
+| **Level 0 — every hop** | Manifest/lock validation and actual PHP/extension platform checks; isolated boot/config; B/P/C route-list diff; the entire existing suite and its test identities/statuses; main-page HTTP smoke for every audited role on a throwaway synthetic DB. A hop that changes request-forgery middleware also has the mandatory real-CSRF check below. | Every applicable Level 0 check must pass or have documented baseline parity where allowed. A missing, unsafe or failed Level 0 check is BLOCKED and cannot auto-advance. |
+| **Level 1 — audited critical features** | Characterization of features marked critical in the audit: auth/roles, mail, PDF/export, storage, and queue/schedule as applicable. Include positive controls. | Complete all applicable Level 1 checks. Only a specific pre-approved exception can leave a gap; continuation is PARTIAL. |
+| **Level 2 — risk/owner driven** | Expanded checks selected for risk or by the owner, such as PDF pixel comparison, decoded MIME details, the expanded CSRF × `Sec-Fetch-Site` matrix, or backup/restore. | Complete every risk-required Level 2 check. A specific pre-approved exception permits only PARTIAL continuation. |
+
+For a hop to close as **VERIFIED IN <environment>**, Level 0, applicable Level 1, and all risk-required Level 2 checks must be complete, with no unresolved regression. An approved, specifically named Level 1/2 exception makes the hop **PARTIAL**, not VERIFIED, and may permit the next hop. No generic “missing gates accepted” approval is valid. Report behavior parity, all-green suite, security status and deployment readiness separately. An approved, reproduced B failure may establish parity, but it does not make the suite all-green.
+
+## Level 0 evidence
+
+- **Manifest, lock and platform:** Validate the manifest/lock pair, candidate install reproducibility and unexplained dependency changes. Check the complete production artifact against the actual target PHP and extensions; document dev tools on their separately supported runtime. Record exact PHP version and extension results rather than relying on a version floor or developer machine.
+- **Isolated boot/config:** Boot the intended framework/runtime in isolation. Review newly effective defaults using a whitelist or redacted structural diff, never a full secret dump; absent config keys can acquire new defaults.
+- **Route-list diff:** Capture route lists for B/P/C and compare route names, domains, methods, URIs, actions and relevant middleware. Account for version-dependent display formatting rather than treating a raw text diff as proof. Investigate additions, removals and changes; route-list evidence is not a request/response behavior test.
+- **Entire existing suite:** Run the complete existing suite on B/P/C. Preserve original CLI commands, exits, warnings/risky/skipped/incomplete/deprecation states, test identities and statuses—not just a JUnit pass count. A known failure matching B can establish parity only with recorded approval and an explicit baseline-defect record; it remains a failure, not an all-green result.
+- **Role smoke:** For every audited role, exercise the main page over HTTP using synthetic users and a throwaway synthetic DB. Record the request, expected role-specific result, status and a positive control. Do not substitute a direct controller call or a generic 200 response for this smoke.
+- **Conditional real-CSRF gate:** If the hop changes request-forgery middleware or its policy, run outside Laravel's test-mode CSRF bypass with real middleware and session handling. Use a few representative protected POST routes; test every explicit `$except` route; include rejected missing/invalid-token cases where applicable and a valid-token success control. Evaluate token/origin behavior under the documented policy with representative absent, same-origin and cross-site cases. Never infer safety from a PHPUnit request or waive a security regression.
+
+## Risk-selected behavior gate catalog
+
+The audit marks critical features for Level 1. Assign other applicable gates to Level 2 when risk or the owner requires them; record a justified N/A only when the behavior is absent or outside approved scope.
+
+| Feature | Characterization scope when selected |
+|---|---|
+| Validation / request size | Same invalid/empty/null/zero/multibyte/file inputs, error keys/messages, redirects and old input; include wildcard/conditional rules, numeric/date boundaries and untrusted upload types. On Laravel 13.38+ where relevant, test cumulative form/JSON key bytes above 20 MiB and a valid below-limit control. Cite the exact upstream source/version and supported configuration provenance for the behavior; do not invent runtime helper or configuration names. |
+| Auth / security | Each critical guard/role: login, bad password, logout, throttle, authorization deny/allow, password reset/expiry, remember-me, hashing writes, signed links and APIs as applicable. Preserve CSRF/CORS and trusted-proxy correctness. Security regressions are hard stops; an owner cannot waive them. |
+| HTTP / headers | Success and failure statuses, redirects/location/HTTPS, trusted forwarded headers/IP, cookie Secure/HttpOnly/SameSite, cross-site requests, subdomain behavior, HEAD/OPTIONS and body/content-type contracts. |
+| Sessions / encryption | Issue cookies/session under B, read under C, then test intended rollback compatibility. Preserve APP_KEY and cookie name/domain/prefix/store; explicitly decide forced logout only if continuity cannot safely be kept. |
+| Views / browser / assets | Fixed successful GET page/role fixtures, pagination with enough pages, forms/uploads/error pages/maintenance; browser flows for JS and asset-manifest loading. Compare rendered output, not just 200 statuses. |
+| JSON / model serialization | Actual API payloads: date/timezone/precision, casts, null/false/zero, integers/strings, relationships/accessors/appends and pagination metadata; fake IO in model accessors and include contract consumers. |
+| Money / time / business | Exact amounts/rounding/tax, inclusive/exclusive deadlines, DST/timezone/locale/zero values, signed/fractional Carbon intervals, state transitions and repeatability/idempotency. |
+| Database / schema | Existing-data behavior under the actual DB driver; safe migration review and disposable migration tests; `change()` modifier retention, UUIDs, raw expressions, spatial/float types, collation/order/timezone. Do not use SQLite as proof of MySQL parity. Destructive schema changes are an immediate hard stop for continuous execution, even if a disposable test is possible; a separate reviewed scope and decision are required before any such work. |
+| Storage | Upload/read/delete/visibility/URL/listing, adapter config, missing path/permissions/network failure; inspect return values and exceptions, and prevent DB rows referencing failed uploads. |
+| PDF / export | For critical semantic characterization, cover each required template with synthetic short/long/page-break/CJK/image/stamp/checkbox/tax/discount/zero fixtures; compare extracted text, page count/dimensions, exact business values and important markers. Pixel comparison is Level 2 when risk/owner requires it. |
+| Mail / notifications | For critical characterization, compare golden rendered text and a successful capture plus failure/retry behavior, not just fake-send counts. Decoded MIME details (envelope recipients/BCC, decoded subject/body, from/reply-to and attachments) are Level 2 when required. |
+| Queue / scheduler | Serialized job compatibility, retries/backoff/failures/after-commit/unique jobs, schedule expressions/timezones/next-run at a fixed clock, lock ownership, overlapping workers and idempotency. |
+| Backup / restore | Level 2 when required: local synthetic backup including actual DB dump, archive listing, notification payload and a restore with the target client/tool. Never run a real configured backup command without replacing all destinations and callbacks. |
+| Runtime / deploy / rollback | Build the actual deployment artifact/image, validate CLI/FPM/cron/worker runtime alignment, staging production-mode cache policy, drain/restart strategy, old artifact/runtime availability and schema/queue rollback limits. |
+| Security | Live locked-dependency advisory check plus manual configuration/authorization review when selected. Abandoned does not mean exploitable; no advisory does not mean secure. Check for unsafe unserialization, remote PDF access, SVG, debug output and CSRF bypass. |
+
+## CSRF is a real HTTP gate, not a unit-test checkbox
+
+Laravel test mode can bypass CSRF middleware; a successful PHPUnit request alone proves nothing. For a middleware-changing hop, use isolated non-testing HTTP/kernel or browser execution with real middleware and session handling, never a live environment. The mandatory minimal check is specified under Level 0 above. Origin-aware behavior is policy-aware: Laravel 13 intentionally introduces origin-aware request-forgery protection. Evaluate origin-aware versus explicitly token-only policy using the target guide and [CSRF docs](https://laravel.com/docs/13.x/csrf); same-origin behavior may be a documented difference. The representative absent/same-origin/cross-site token cases are sufficient for the minimal check. The full token-state × `Sec-Fetch-Site` Cartesian matrix is Level 2 when risk/owner requires it. Do not assert that every missing-token request must return 419 on both versions, and do not add a blanket middleware override; verify the exact supported configuration/API, middleware inheritance and security requirements.
+
+## Portable characterization and non-vacuous comparison
+
+Keep a small characterization set runnable on the oldest B runtime/toolchain, including PHPUnit 7.5 / PHP 7.x where applicable. Use the same input fixtures and assertions on B/P/C; use compatible suite adapters if one test source cannot parse or run across the range. Avoid PHP attributes and other newer-only syntax in shared tests; avoid return types unsupported by the oldest runtime (for PHP 7.0, for example, `void` is not parseable). Include a fixed clock/timezone/locale, route/role HTTP snapshots with positive controls, golden rendered mail text, and extracted PDF text/business values. Apply deterministic, bounded normalization only to agreed volatile fields, document each normalization, and retain raw artifacts; never normalize away failures, statuses, auth outcomes, missing content or business-value changes.
+
+Use the stdlib `compare_junit.py` CLI as `python3 -I <path-to-compare_junit.py> left.xml right.xml`. It keys cases by `classname::name`; PHPUnit 4.x/5.x reports without `classname` use `class` with namespace separators normalized to dots. Unusable XML, empty case sets or duplicate normalized identities exit 2. Missing/extra cases or status differences exit 1, including `<warning>` transitions; precedence is error, failure, warning, skipped, pass. Assertion-count differences are INFO only. The comparator does not boot the app and does not replace the original suite command, CLI exit, warnings or logs; preserve those alongside JUnit output. Invalid XML is unusable. A known failure matching B is parity with a failing test, not PASS.
+
+Routes need successful matches for actual controllers and valid parameters; all-404/405 output is not coverage. An inaccessible fixture or dynamic route key needs manual coverage, not a regex-based assertion of safety. Compare cached/uncached behavior only when that mode is supported/used; an uncacheable route set in B is a baseline limitation to record, not a reason to rewrite unrelated routing.
+
+## PDF/export detail when selected
+
+- Keep B/P/C fonts, PHP extensions, local assets and fixtures identical. Prove remote fetch blocking at every available transport (streams/curl/subprocess), replace required URLs with identical local assets, and verify the canary. Renderer defaults (e.g. remote fetching disabled) are a security boundary, not an invitation to enable all URLs.
+- If pixel comparison is a required Level 2 gate, agree on metric, threshold and operator before measuring. One documented option is exact-RGB matching pixels / all pixels, per page, under the same rasterizer/version/DPI (e.g. 150), page box and background/alpha settings. Whole-page whitespace can inflate the result; inspect local differences as well.
+- Never average away a failing page, shift/blur/resize/crop to improve scores, or claim byte equality after arbitrary normalization. Normalize only agreed non-semantic volatility and retain raw originals. For PDF metadata/compression differences, semantic/visual equality is usually more meaningful than binary hashes.
+- Save source PDFs, per-page results, renderer settings, fixtures, diff images and the minimum score. Compare C↔P and C↔B independently. Missing tools/templates block a required gate; they are not N/A.
+
+## Mail, scheduling and cache details when selected
+
+- For decoded MIME checks, ignore only agreed volatile Date/Message-ID/boundaries/transfer encoding; compare envelope recipients, decoded headers/bodies and attachment names/content. A `Mail::fake()` count does not exercise a SwiftMailer→Symfony Mailer rendering change.
+- Compare schedule command/expression/timezone and next-run timestamps at a fixed clock rather than padded `schedule:list` text. Laravel/PHP clock fakes do not necessarily control cron libraries or OS processes.
+- Exercise retry/TTL at just-before/exactly-at/just-after boundaries. Integers changed from cache TTL minutes to seconds in 5.8; Carbon 3 signed floats can change delays in 12.
+- Auth throttles need a persistent isolated cache across requests; an array store resetting each request may make a broken throttle test look green. Preserve real cache locks/OTP/session state during production operations.
+
+## Verdict
+
+For each gate record its level, applicability, B/P/C outcomes, C↔P, C↔B, coverage, accepted differences, evidence, approval reference and blockers. Separate:
+
+1. Behavior parity within the stated fixture/scope/environment.
+2. All-green tests, including failure/warning/skip limitations.
+3. Security status and approved remediations; never approve a regression as a shortcut.
+4. Operational readiness and rollback feasibility.
+
+Use **VERIFIED IN <environment>** only when Level 0, applicable Level 1 and risk-required Level 2 are complete with no unresolved regression. Use **PARTIAL** only for a specific pre-approved missing Level 1/2 gate or accepted limitation; state exactly what remains and that it is not verified. Use **BLOCKED** for any missing Level 0, unapproved gap, unresolved regression or unsafe environment. A baseline test failure may support parity only with recorded approval and remains a failing test. Local verification is not production deployment confirmation.
