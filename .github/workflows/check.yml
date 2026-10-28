@@ -10,7 +10,8 @@ permissions:
 
 jobs:
   self-check:
-    runs-on: ubuntu-latest
+    # ponytail: ubuntu-latest (26.04) has no Python 3.9 build; when ubuntu-24.04 is retired, run the 3.9 job in a python:3.9-slim container.
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     strategy:
       matrix:
