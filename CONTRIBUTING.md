@@ -4,6 +4,8 @@ Thanks for helping improve these Laravel upgrade skills. Bug reports, correction
 
 If you use a coding agent, point it at [AGENTS.md](AGENTS.md): it contains the same rules in a compact form.
 
+Everyone taking part in this project follows the [Code of Conduct](CODE_OF_CONDUCT.md).
+
 ## Ground rules
 
 - **Official sources first.** Guidance about Laravel, PHP or Composer behavior must cite the official upgrade guide, release notes, documentation, or a framework commit or tag. Community posts can motivate a change but cannot be its only evidence.

@@ -35,7 +35,7 @@ Missing evidence is reported as BLOCKED or NOT RUN, never as PASS.
 | `skills/laravel-upgrade/scripts/compare_junit.py` | Compares two JUnit reports by test identity and status |
 | `skills/laravel-upgrade/scripts/check.py` | Offline self-check of the suite, plus a read-only run-state validator |
 | `tools/add_snapshot.py`, `tools/verify_sources.py` | Maintainer tools to pin official files and verify their content and provenance; not shipped to users |
-| `AGENTS.md`, `CONTRIBUTING.md`, `SECURITY.md`, `CHANGELOG.md` | Agent rules and review order, contributor guide, vulnerability reporting, release history |
+| `AGENTS.md`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `CHANGELOG.md` | Agent rules and review order, contributor guide, community standards, vulnerability reporting, release history |
 
 ## Installation
 

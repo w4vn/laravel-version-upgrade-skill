@@ -4,6 +4,10 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ## [Unreleased]
 
+### Added
+
+- `CODE_OF_CONDUCT.md` (Contributor Covenant 2.1); conduct reports go to admin@w4vn.net.
+
 ## [1.0.1] - 2026-10-28
 
 ### Added
