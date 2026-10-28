@@ -551,6 +551,9 @@ def skill_checks():
         for forbidden in private_terms:
             assert forbidden not in text, f"Private/stale project data in {file.name}: {forbidden}"
         assert not re.search(r"(?:/Users|/home|/Volumes)/[\w.-]+/", text), f"Absolute personal path in {file.name}"
+        # Zero-width and bidi control characters can hide instructions from reviewers.
+        hidden = re.search("[\u200b-\u200f\u202a-\u202e\u2060-\u2064\u2066-\u2069\ufeff]", text)
+        assert not hidden, f"Invisible or bidi control character U+{ord(hidden.group()):04X} in {file.name}"
         for target in re.findall(r"\]\(([^)]+)\)", text):
             if target.startswith(("http:", "https:", "mailto:", "#")):
                 continue

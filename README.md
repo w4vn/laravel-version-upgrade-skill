@@ -34,6 +34,8 @@ Missing evidence is reported as BLOCKED or NOT RUN, never as PASS.
 | `skills/laravel-upgrade/scripts/inventory.py` | Static inventory: locked versions, Composer content-hash sync, upgrade hints |
 | `skills/laravel-upgrade/scripts/compare_junit.py` | Compares two JUnit reports by test identity and status |
 | `skills/laravel-upgrade/scripts/check.py` | Offline self-check of the suite, plus a read-only run-state validator |
+| `tools/add_snapshot.py`, `tools/verify_sources.py` | Maintainer tools to pin official files and verify their content and provenance; not shipped to users |
+| `AGENTS.md`, `CONTRIBUTING.md`, `SECURITY.md`, `CHANGELOG.md` | Agent rules and review order, contributor guide, vulnerability reporting, release history |
 
 ## Installation
 
@@ -50,7 +52,7 @@ Drop `-g` to install into the current project instead. `-a` can target other age
 Manually, pinned to a version tag:
 
 ```bash
-git clone --branch v1.0.0 https://github.com/w4vn/laravel-version-upgrade-skill.git
+git clone --branch v1.0.1 https://github.com/w4vn/laravel-version-upgrade-skill.git
 mkdir -p ~/.claude/skills
 # Back up or remove existing copies of these four skills first.
 for s in "$PWD"/laravel-version-upgrade-skill/skills/*; do ln -s "$s" ~/.claude/skills/; done
@@ -94,13 +96,15 @@ Re-issuing the same `/laravel-upgrade-step` command resumes an interrupted run. 
 
 ## Security
 
-Skill files steer your agent, so treat updates like code: install from a version tag and review diffs before upgrading. Report suspected vulnerabilities in the skills or scripts privately to the maintainers of the w4vn GitHub organization, not in a public issue.
+Skill files steer your agent, so treat updates like code: install from a version tag and review diffs before upgrading. Report vulnerabilities privately as described in [SECURITY.md](SECURITY.md).
 
-## Maintaining
+## Contributing
 
-- Run `python3 -I skills/laravel-upgrade/scripts/check.py` before every commit. CI runs the same check on pushes to `main` and on pull requests.
-- To make the check fail when private client or project names leak into the docs, set `LARAVEL_UPGRADE_PRIVATE_TERMS="name-one,name-two"`.
-- To refresh the reference data for a new Laravel release, follow [sources.md](skills/laravel-upgrade/references/sources.md).
+Contributions are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md). Coding agents should read [AGENTS.md](AGENTS.md), which also defines the pull request review order. Changes are listed in [CHANGELOG.md](CHANGELOG.md).
+
+- CI runs `check.py` on Python 3.9 and the latest Python for every push to `main` and every pull request.
+- CI runs `tools/verify_sources.py` whenever official snapshots or the manifest change. It checks content and that every pinned commit belongs to the official Laravel branch.
+- To make `check.py` fail when private client or project names leak into the docs, set `LARAVEL_UPGRADE_PRIVATE_TERMS="name-one,name-two"`.
 
 ## License
 

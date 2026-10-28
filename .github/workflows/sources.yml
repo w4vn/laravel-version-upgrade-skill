@@ -1,0 +1,30 @@
+name: sources
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "skills/laravel-upgrade/references/official/**"
+      - "skills/laravel-upgrade/references/source-manifest.json"
+      - "tools/verify_sources.py"
+  pull_request:
+    paths:
+      - "skills/laravel-upgrade/references/official/**"
+      - "skills/laravel-upgrade/references/source-manifest.json"
+      - "tools/verify_sources.py"
+
+permissions:
+  contents: read
+
+jobs:
+  verify-sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Verify official snapshots against upstream
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -I tools/verify_sources.py
